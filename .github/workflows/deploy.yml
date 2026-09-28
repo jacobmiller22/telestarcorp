@@ -109,7 +109,7 @@ jobs:
 
       - name: Staging Edge Parity Probe
         run: |
-          STAGING_URL="${{ secrets.STAGING_API_URL || 'https://staging-api.example.com' }}"
+          STAGING_URL="${{ secrets.STAGING_API_URL || 'https://telestarcorp-staging.jacobmillerdev.workers.dev' }}"
           echo "Probing staging edge health at ${STAGING_URL}..."
           pnpm run test:parity --url "${STAGING_URL}" || true
 
@@ -160,7 +160,7 @@ jobs:
     steps:
       - name: Production Edge Health Probe
         run: |
-          PROD_URL="${{ secrets.PRODUCTION_API_URL || 'https://api.example.com' }}"
+          PROD_URL="${{ secrets.PRODUCTION_API_URL || 'https://telestarcorp.jacobmiller22.com' }}"
           echo "Probing production health at ${PROD_URL}/api/health..."
           curl -s -f "${PROD_URL}/api/health" || true
 
