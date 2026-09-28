@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@telestarcorp/config": "workspace:*",
-    "@telestarcorp/types": "workspace:*"
+    "@telestarcorp/types": "workspace:*",
+    "@telestarcorp/web": "workspace:*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240923.0",
