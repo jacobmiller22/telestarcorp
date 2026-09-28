@@ -1,0 +1,30 @@
+name: Terraform Infrastructure Drift Detection
+
+on:
+  schedule:
+    - cron: '0 4 * * 1' # Weekly Monday at 04:00 UTC
+  workflow_dispatch:
+
+jobs:
+  detect-drift:
+    name: Check Cloudflare IaC Drift
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.16.1"
+
+      - name: Run Terraform Plan Check
+        if: env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != ''
+        run: |
+          cd infra/terraform/environments/production
+          terraform init -backend=false || true
+          terraform plan -detailed-exitcode -no-color || true

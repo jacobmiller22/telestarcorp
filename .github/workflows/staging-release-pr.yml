@@ -1,0 +1,75 @@
+name: Automated Staging Release PR & Changelog
+
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+concurrency:
+  group: staging-release-pr
+  cancel-in-progress: true
+
+jobs:
+  compose-and-sync-release-pr:
+    name: Compose Release Notes & Sync Release PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Compose Rolling Release Manifest
+        id: release-manifest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/release
+          pnpm run release:notes --base origin/production --head origin/staging --output /tmp/release/notes.md
+          pnpm run release:notes --base origin/production --head origin/staging --json --output /tmp/release/delta.json
+
+          COMMIT_COUNT=$(node -e "console.log(JSON.parse(require('fs').readFileSync('/tmp/release/delta.json', 'utf-8')).commitCount)")
+          echo "commit_count=${COMMIT_COUNT}" >> $GITHUB_OUTPUT
+
+      - name: Create or Update Staging-to-Production Release PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          COMMIT_COUNT: ${{ steps.release-manifest.outputs.commit_count }}
+        run: |
+          PR_TITLE="chore(release): Promote staging to production [Pending Review]"
+          LABELS="type:release,status:needs-review"
+
+          EXISTING_PR_JSON=$(gh pr list --repo "${REPO}" --base production --head staging --state open --json number,url)
+          EXISTING_PR_NUM=$(echo "${EXISTING_PR_JSON}" | jq -r '.[0].number // empty')
+
+          if [ -n "${EXISTING_PR_NUM}" ]; then
+            echo "Refreshing Release PR #${EXISTING_PR_NUM}..."
+            gh pr edit "${EXISTING_PR_NUM}" --repo "${REPO}" --title "${PR_TITLE}" --body-file /tmp/release/notes.md
+          else
+            if [ "${COMMIT_COUNT}" -eq "0" ]; then
+              echo "Zero commits between production and staging. Skipping Release PR creation."
+              exit 0
+            fi
+
+            echo "Opening new Release PR..."
+            gh pr create --repo "${REPO}" --base production --head staging --title "${PR_TITLE}" --body-file /tmp/release/notes.md --label "${LABELS}"
+          fi

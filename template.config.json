@@ -1,0 +1,21 @@
+{
+  "name": "cloudflare-stack-template",
+  "domain": "example.com",
+  "zoneName": "example.com",
+  "subdomainPrefix": "api",
+  "features": {
+    "d1": true,
+    "kv": true,
+    "r2": true,
+    "queues": true,
+    "serviceBindings": true,
+    "ephemeralPreviews": true,
+    "browserRendering": true,
+    "stagedPromotion": true,
+    "cloudflareAccess": false,
+    "turnstile": false,
+    "discordAlerts": true,
+    "matrixProfiles": true,
+    "agentSkills": true
+  }
+}

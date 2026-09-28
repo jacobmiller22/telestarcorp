@@ -1,0 +1,42 @@
+name = "template-worker-bg"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Consumers for Cloudflare Queues
+[[queues.consumers]]
+queue = "template-jobs-prod"
+max_batch_size = 10
+max_batch_timeout = 5
+max_retries = 3
+
+[triggers]
+crons = ["0 * * * *"] # Every hour maintenance trigger
+
+[env.staging]
+name = "template-worker-bg-staging"
+
+[[env.staging.queues.consumers]]
+queue = "template-jobs-staging"
+max_batch_size = 10
+max_batch_timeout = 5
+max_retries = 3
+
+[env.staging.triggers]
+crons = ["0 * * * *"]
+
+[env.production]
+name = "template-worker-bg"
+
+[[env.production.queues.consumers]]
+queue = "template-jobs-prod"
+max_batch_size = 10
+max_batch_timeout = 5
+max_retries = 3
+
+[env.production.triggers]
+crons = ["0 * * * *"]
+
+# Note: In ephemeral PR previews, queue consumers are omitted to prevent 11004 collisions
+[env.preview]
+name = "template-worker-bg-preview"

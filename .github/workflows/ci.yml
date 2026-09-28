@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main, staging, production]
+  pull_request:
+    branches: [main, staging, production]
+
+jobs:
+  enforce-promotion-rules:
+    name: Enforce Staged Promotion Rules
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate Staged Git Promotion Governance
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "Target branch (base): ${{ github.base_ref }}"
+            echo "Source branch (head): ${{ github.head_ref }}"
+
+            if [ "${{ github.base_ref }}" = "main" ]; then
+              echo "❌ ERROR: Pull requests targeting legacy 'main' are prohibited."
+              echo "This project uses a staged promotion pipeline: feature development must target 'staging'."
+              exit 1
+            fi
+
+            if [ "${{ github.base_ref }}" = "production" ] && [ "${{ github.head_ref }}" != "staging" ]; then
+              echo "❌ ERROR: Direct pull requests to 'production' are prohibited."
+              echo "Only the 'staging' branch is permitted to merge into 'production'."
+              exit 1
+            fi
+            echo "✅ Promotion rule check passed."
+          fi
+
+  lint-and-check:
+    name: Lint, Typecheck & Bundle Budget
+    runs-on: ubuntu-latest
+    needs: [enforce-promotion-rules]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Monorepo Typecheck & Lint
+        run: pnpm run check
+
+      - name: Validate D1 Additive Migrations
+        run: pnpm run d1:migrate:check
+
+      - name: Check Worker Bundle Budget
+        run: pnpm run check:bundle
+
+      - name: Validate Worker Deployment (Dry-Run)
+        if: github.event_name == 'pull_request'
+        run: pnpm exec wrangler deploy --dry-run --env preview
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.16.1"
+
+      - name: Validate Terraform Configuration & Formatting
+        run: |
+          terraform fmt -recursive -check infra/terraform
+          cd infra/terraform/environments/staging && terraform init -backend=false && terraform validate -no-color
