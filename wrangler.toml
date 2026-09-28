@@ -1,116 +1,62 @@
-name = "template-api"
+name = "telestarcorp"
 main = "apps/api/src/index.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
-# Primary D1 Database
-[[d1_databases]]
-binding = "DB"
-database_name = "template-prod-db"
-database_id = "00000000-0000-0000-0000-000000000000"
-migrations_dir = "migrations"
-
-# Workers KV Namespace
-[[kv_namespaces]]
-binding = "CACHE_KV"
-id = "00000000000000000000000000000000"
-
-# R2 Bucket Binding
-[[r2_buckets]]
-binding = "STORAGE_BUCKET"
-bucket_name = "template-media-prod"
+[assets]
+directory = "./apps/web/dist"
+binding = "ASSETS"
 
 [vars]
 NODE_ENV = "production"
 ENVIRONMENT = "production"
-API_URL = "https://api.example.com"
+API_URL = "https://telestarcorp.com"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "false"
 FLAG_ENABLE_BETA_FEATURES = "false"
 
 [env.staging]
-name = "template-api-staging"
+name = "telestarcorp-staging"
 routes = [
-  { pattern = "staging-api.example.com/*", zone_name = "example.com" }
+  { pattern = "staging.telestarcorp.com/*", zone_name = "telestarcorp.com" }
 ]
-
-[[env.staging.d1_databases]]
-binding = "DB"
-database_name = "template-staging-db"
-database_id = "00000000-0000-0000-0000-000000000001"
-migrations_dir = "migrations"
-
-[[env.staging.kv_namespaces]]
-binding = "CACHE_KV"
-id = "00000000000000000000000000000001"
-
-[[env.staging.r2_buckets]]
-binding = "STORAGE_BUCKET"
-bucket_name = "template-media-staging"
 
 [env.staging.vars]
 NODE_ENV = "staging"
 ENVIRONMENT = "staging"
-API_URL = "https://staging-api.example.com"
+API_URL = "https://staging.telestarcorp.com"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "true"
 FLAG_ENABLE_BETA_FEATURES = "true"
 
 [env.production]
-name = "template-api"
+name = "telestarcorp-production"
 routes = [
-  { pattern = "api.example.com/*", zone_name = "example.com" }
+  { pattern = "telestarcorp.com/*", zone_name = "telestarcorp.com" },
+  { pattern = "www.telestarcorp.com/*", zone_name = "telestarcorp.com" }
 ]
-
-[[env.production.d1_databases]]
-binding = "DB"
-database_name = "template-prod-db"
-database_id = "00000000-0000-0000-0000-000000000000"
-migrations_dir = "migrations"
-
-[[env.production.kv_namespaces]]
-binding = "CACHE_KV"
-id = "00000000000000000000000000000000"
-
-[[env.production.r2_buckets]]
-binding = "STORAGE_BUCKET"
-bucket_name = "template-media-prod"
 
 [env.production.vars]
 NODE_ENV = "production"
 ENVIRONMENT = "production"
-API_URL = "https://api.example.com"
+API_URL = "https://telestarcorp.com"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "false"
 FLAG_ENABLE_BETA_FEATURES = "false"
 
 [env.preview]
-name = "template-api-preview"
+name = "telestarcorp-preview"
 routes = [
-  { pattern = "pr-*-api.example.com/*", zone_name = "example.com" }
+  { pattern = "pr-*.telestarcorp.com/*", zone_name = "telestarcorp.com" }
 ]
-
-[[env.preview.d1_databases]]
-binding = "DB"
-database_name = "template-preview-db"
-database_id = "00000000-0000-0000-0000-000000000002"
-migrations_dir = "migrations"
-
-[[env.preview.kv_namespaces]]
-binding = "CACHE_KV"
-id = "00000000000000000000000000000002"
-
-[[env.preview.r2_buckets]]
-binding = "STORAGE_BUCKET"
-bucket_name = "template-media-preview"
 
 [env.preview.vars]
 NODE_ENV = "preview"
 ENVIRONMENT = "preview"
-API_URL = "https://preview-api.example.com"
+API_URL = "https://preview.telestarcorp.com"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "true"

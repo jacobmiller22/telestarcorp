@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Us | Telestar Corporation"
+  description="Connect with our telecommunications specialists to request a customized quote, schedule a demo, or get direct technical support."
+>
+  <div class="bg-gradient-to-b from-blue-50/60 to-white py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Page Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
+          Get In Touch
+        </span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          Let’s discuss your telecom needs.
+        </h1>
+        <p class="mt-4 text-base sm:text-lg text-slate-600">
+          Whether you’re exploring a new hosted phone system, optimizing your contact center, or integrating with Microsoft Teams, we’re here to help.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <!-- Contact Form Column -->
+        <div class="lg:col-span-7 bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Request a Customized Consultation</h2>
+          <p class="text-sm text-slate-500 mb-6">
+            Fill out the form below and an engineer will get back to you within 1 business day.
+          </p>
+
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="first-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                  First Name *
+                </label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="firstName"
+                  required
+                  placeholder="Jane"
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
+                />
+              </div>
+
+              <div>
+                <label for="last-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                  Last Name *
+                </label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="lastName"
+                  required
+                  placeholder="Doe"
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                  Business Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="jane@company.com"
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="(555) 000-0000"
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="company-size" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                  Company Size
+                </label>
+                <select
+                  id="company-size"
+                  name="companySize"
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
+                >
+                  <option value="1-5">1 – 5 users</option>
+                  <option value="6-20">6 – 20 users</option>
+                  <option value="21-50">21 – 50 users</option>
+                  <option value="50-100">50 – 100 users</option>
+                  <option value="100+">100+ enterprise</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="primary-interest" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                  Primary Interest
+                </label>
+                <select
+                  id="primary-interest"
+                  name="primaryInterest"
+                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
+                >
+                  <option value="unified-comms">Unified Communications / Hosted VoIP</option>
+                  <option value="contact-center">Contact Center Solutions</option>
+                  <option value="teams-integration">Microsoft Teams Integration</option>
+                  <option value="custom-solution">Custom Telecom Assessment</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+                How can we help? (Optional)
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell us about your current phone setup, number of seats, or specific requirements..."
+                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
+              ></textarea>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                id="submit-btn"
+                class="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer"
+              >
+                Submit Consultation Request
+              </button>
+            </div>
+          </form>
+
+          <!-- Success Alert (hidden by default) -->
+          <div
+            id="form-success-banner"
+            class="hidden mt-6 p-6 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2"
+          >
+            <div class="flex items-center gap-2 font-bold text-emerald-800">
+              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Thank you! Your request has been received.
+            </div>
+            <p class="text-sm text-emerald-700">
+              A Telestar communications engineer has been notified and will reach out to you within one business day with customized pricing and options.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar / Contact Details Column -->
+        <div class="lg:col-span-5 space-y-8">
+          <!-- Direct Support Card -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-6">
+            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">Direct Support & Inquiries</h3>
+
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Email Support</h4>
+                  <p class="text-slate-500">Fast response from our technical desk.</p>
+                  <a href="mailto:support@telestarcorp.com" class="text-blue-600 font-medium hover:underline mt-0.5 inline-block">
+                    support@telestarcorp.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-slate-900">Support Hours</h4>
+                  <p class="text-slate-500">Monday – Friday: 8:00 AM – 6:00 PM EST</p>
+                  <p class="text-xs text-slate-400 mt-1">24/7 Emergency priority routing for critical enterprise lines.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Why Telestar Callout -->
+          <div class="bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-2xl p-8 shadow-md space-y-4">
+            <h3 class="text-lg font-bold text-white">The Telestar Difference</h3>
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                <span>No overseas call centers — talk directly with knowledgeable US engineers</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                <span>White-glove onboarding and free setup for all company sizes</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                <span>Zero downtime number porting guaranteed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const banner = document.getElementById('form-success-banner');
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+
+    if (form && banner) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerText = 'Transmitting...';
+        }
+
+        setTimeout(() => {
+          form.reset();
+          form.classList.add('opacity-50', 'pointer-events-none');
+          banner.classList.remove('hidden');
+          if (submitBtn) {
+            submitBtn.innerText = 'Request Submitted';
+          }
+        }, 600);
+      });
+    }
+  </script>
+</Layout>

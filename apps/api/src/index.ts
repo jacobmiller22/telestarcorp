@@ -39,20 +39,28 @@ export default {
       });
     }
 
-    // 4. Root Welcome Route
+    // 4. Try serving static assets (Astro frontend)
+    if (env.ASSETS) {
+      const assetResponse = await env.ASSETS.fetch(request);
+      if (assetResponse.status !== 404) {
+        return assetResponse;
+      }
+    }
+
+    // 5. Root Welcome Route (fallback if ASSETS not present)
     if (pathname === '/') {
       return new Response(
         JSON.stringify(
           {
-            name: 'Cloudflare Workers DevOps Template API',
+            name: 'Telestar Corporation Edge Platform',
             environment: env.ENVIRONMENT || env.NODE_ENV || 'development',
             status: 'operational',
             routes: {
               health: '/api/health',
               items: '/api/items',
-              bgJob: '/api/bg-job',
             },
             bindings: {
+              assets: !!env.ASSETS,
               d1: !!env.DB,
               kv: !!env.CACHE_KV,
               r2: !!env.STORAGE_BUCKET,

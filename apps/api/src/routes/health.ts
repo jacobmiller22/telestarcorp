@@ -89,6 +89,9 @@ export async function handleHealthCheck(request: Request, env: Env): Promise<Res
     bindings.serviceBindings = { status: 'omitted' };
   }
 
+  // 5. Probe Static Assets
+  bindings.assets = env.ASSETS ? { status: 'healthy' } : { status: 'omitted' };
+
   const nodeEnv = (globalThis as any).process?.env || {};
   const commitSha = env.BUILD_COMMIT_SHA || nodeEnv.BUILD_COMMIT_SHA || 'dev-local';
   const shortSha = commitSha.slice(0, 7);

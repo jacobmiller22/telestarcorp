@@ -1,0 +1,148 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Telestar Corporation – Hosted VoIP Solutions | Unified Communications',
+  description = 'Telestar helps small and growing businesses communicate better everyday with our all-in-one unified communications platform, hosted VoIP, and contact center solutions.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased flex flex-col selection:bg-blue-600 selection:text-white">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="/" class="flex items-center gap-2 group">
+              <img
+                src="/assets/logo.png"
+                alt="Telestar Corporation"
+                class="h-10 w-auto object-contain transition-transform group-hover:scale-102"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="/" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Home</a>
+            <a href="/#features" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Solutions</a>
+            <a href="/#testimonials" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Testimonials</a>
+            <a href="/contact" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Contact</a>
+          </nav>
+
+          <!-- Action Buttons -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition-all hover:shadow-md"
+            >
+              Get Started
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="flex md:hidden">
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+              aria-label="Toggle navigation menu"
+            >
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden pb-6 pt-2 border-t border-slate-100 space-y-3">
+          <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Home</a>
+          <a href="/#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Solutions</a>
+          <a href="/#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Testimonials</a>
+          <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Contact</a>
+          <div class="pt-2">
+            <a href="/contact" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <!-- Column 1: Brand Info -->
+          <div class="md:col-span-2 space-y-4">
+            <img src="/assets/logo-white.png" alt="Telestar Corporation" class="h-9 w-auto object-contain" />
+            <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+              We help small and medium businesses communicate better everyday with our all-in-one communications platform. Work better. From wherever.
+            </p>
+            <div class="pt-2 text-sm text-slate-400">
+              <span class="font-semibold text-white">Direct Support:</span> support@telestarcorp.com
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation -->
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">Navigation</h3>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+              <li><a href="/#features" class="hover:text-white transition-colors">Solutions</a></li>
+              <li><a href="/#testimonials" class="hover:text-white transition-colors">Client Testimonials</a></li>
+              <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Platform Capabilities -->
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">Solutions</h3>
+            <ul class="space-y-2.5 text-sm text-slate-400">
+              <li>Hosted VoIP Business Phones</li>
+              <li>Omnichannel Contact Center</li>
+              <li>Microsoft Teams Integration</li>
+              <li>Video Conferencing & Chat</li>
+              <li>Mobile & Desktop Apps</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 mt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+          <p>Copyright &copy; {new Date().getFullYear()} Telestar Corporation. All rights reserved.</p>
+          <p class="mt-2 sm:mt-0">Hosted on Cloudflare Edge Network.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    </script>
+  </body>
+</html>
