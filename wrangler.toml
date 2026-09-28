@@ -2,6 +2,7 @@ name = "telestarcorp"
 main = "apps/api/src/index.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = true
 
 [assets]
 directory = "./apps/web/dist"
@@ -10,7 +11,7 @@ binding = "ASSETS"
 [vars]
 NODE_ENV = "production"
 ENVIRONMENT = "production"
-API_URL = "https://telestarcorp.com"
+API_URL = "https://telestarcorp.jacobmiller22.com"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "false"
@@ -18,14 +19,15 @@ FLAG_ENABLE_BETA_FEATURES = "false"
 
 [env.staging]
 name = "telestarcorp-staging"
+workers_dev = true
 routes = [
-  { pattern = "staging.telestarcorp.com/*", zone_name = "telestarcorp.com" }
+  { pattern = "staging.telestarcorp.jacobmiller22.com", custom_domain = true }
 ]
 
 [env.staging.vars]
 NODE_ENV = "staging"
 ENVIRONMENT = "staging"
-API_URL = "https://staging.telestarcorp.com"
+API_URL = "https://staging.telestarcorp.jacobmiller22.com"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "true"
@@ -33,15 +35,15 @@ FLAG_ENABLE_BETA_FEATURES = "true"
 
 [env.production]
 name = "telestarcorp-production"
+workers_dev = true
 routes = [
-  { pattern = "telestarcorp.com/*", zone_name = "telestarcorp.com" },
-  { pattern = "www.telestarcorp.com/*", zone_name = "telestarcorp.com" }
+  { pattern = "telestarcorp.jacobmiller22.com", custom_domain = true }
 ]
 
 [env.production.vars]
 NODE_ENV = "production"
 ENVIRONMENT = "production"
-API_URL = "https://telestarcorp.com"
+API_URL = "https://telestarcorp.jacobmiller22.com"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "false"
@@ -49,14 +51,12 @@ FLAG_ENABLE_BETA_FEATURES = "false"
 
 [env.preview]
 name = "telestarcorp-preview"
-routes = [
-  { pattern = "pr-*.telestarcorp.com/*", zone_name = "telestarcorp.com" }
-]
+workers_dev = true
 
 [env.preview.vars]
 NODE_ENV = "preview"
 ENVIRONMENT = "preview"
-API_URL = "https://preview.telestarcorp.com"
+API_URL = "https://telestarcorp-preview.jacobmillerdev.workers.dev"
 FLAG_MAINTENANCE_MODE = "false"
 FLAG_EMERGENCY_KILL_SWITCH = "false"
 FLAG_VERBOSE_DEBUG_HEADERS = "true"
