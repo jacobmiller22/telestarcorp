@@ -18,63 +18,78 @@ const features: Feature[] = [
     title: 'Unified Communications',
     subtitle: 'Talk, text, meet, and collaborate from any device.',
     description:
-      'Eliminate fragmented tools. Telestar combines crystal-clear HD voice, business SMS/MMS, video meetings, and team chat into one intuitive application that travels everywhere you go.',
+      'Eliminate fragmented tools. Telestar combines crystal-clear cloud PBX voice, business SMS, video conferencing, and mobile/desktop apps into one intuitive platform that travels everywhere you go.',
     bullets: [
-      'Carrier-grade HD Voice & Cloud PBX with custom auto-attendants',
-      'Two-way Business SMS & MMS from your dedicated company number',
-      'HD Video conferencing with screen sharing and zero software downloads',
-      'Seamless multi-device switching (Desktop, Mobile, Web, Hardware Phones)',
+      'Reliable Cloud PBX with custom automated attendants and voicemail to email',
+      'Business SMS & text messaging from your company phone numbers',
+      'Desktop and mobile apps keep you connected at the office, home, or on the road',
+      'Intuitive administrative control panel with quick user and extension provisioning',
     ],
     reverseLayout: false,
   },
   {
     id: 'contact-center',
     badge: 'Customer Experience',
-    title: 'Omnichannel Contact Center',
-    subtitle: 'Enterprise-grade contact center intelligence built for growing teams.',
+    title: 'Streamline Workflows with Contact Center',
+    subtitle: 'Differentiate your business where it matters most – the customer experience.',
     description:
-      'Differentiate your business where it matters most: customer satisfaction. Provide fast, frictionless support with intelligent routing, live supervisor coaching, and deep analytics.',
+      'Deliver professional, frictionless support to every caller. Telestar Contact Center equips your team with intelligent routing, custom call queues, call recording, and practical call reporting without enterprise complexity.',
     bullets: [
-      'Intelligent skill-based call routing, custom queues, and interactive IVR',
-      'Real-time supervisor monitoring, private whisper coaching, and call barging',
-      'Comprehensive reporting, agent performance tracking, and call recording',
-      'Seamless CRM screen-pops for Salesforce, HubSpot, Zendesk, and more',
+      'Intelligent call distribution, hunt groups, and interactive automated IVR menus',
+      'Automatic call recording for compliance, training, and quality assurance',
+      'Call queue management and real-time agent availability tracking',
+      'Clear, actionable reporting on incoming call volumes and response times',
     ],
     image: '/assets/contact-center.png',
     imageAlt: 'Telestar Contact Center management interface and analytics',
     reverseLayout: true,
   },
   {
-    id: 'teams-integration',
-    badge: 'Productivity Synergy',
-    title: 'Microsoft Teams Phone Integration',
-    subtitle: 'Supercharge Microsoft Teams with carrier-grade voice.',
+    id: 'file-backup',
+    badge: 'Data Protection Pillar',
+    title: 'SecuriSync File Sharing & Real-Time Backup',
+    subtitle: 'Keep business data protected, synchronized, and instantly accessible.',
     description:
-      'Keep the collaboration tools your team already uses. Telestar bridges directly into Microsoft Teams, enabling outbound and inbound calling directly from Teams without paying premium Microsoft calling plan markups.',
+      "A core pillar of Telestar's all-in-one business platform. Securely synchronize files across desktop and mobile devices, share folders with clients, and protect critical company records against hardware failure and ransomware.",
     bullets: [
-      'Direct carrier routing with zero extra softphones or apps to install',
-      'Retain existing business phone numbers with zero-downtime porting',
-      'Substantial cost savings compared to Microsoft Calling Plans',
-      'Unified billing, call logs, and centralized administrator provisioning',
+      'Real-time automatic cloud backup for desktop and laptop business files',
+      'Point-in-time version restore to recover instantly from ransomware or accidental deletion',
+      'Secure, password-protected file sharing links with expiration dates for clients',
+      'Seamless multi-device synchronization across Windows, Mac, iOS, and Android',
     ],
     reverseLayout: false,
   },
   {
-    id: 'custom-solutions',
-    badge: 'Tailored Deployments',
-    title: 'Customized Telecom Solutions',
-    subtitle: 'Designed specifically for solopreneurs up to 100+ seat businesses.',
+    id: 'teams-integration',
+    badge: 'Teams Voice',
+    title: 'Integrate Microsoft Teams with Your Phone',
+    subtitle: 'Connect with teams and customers all in one place.',
     description:
-      'No two businesses have identical communication workflows. Telestar works one-on-one with your team to architect, provision, and deploy a communication solution that matches your precise operational needs.',
+      'Keep the collaboration tools your team already uses every day. Telestar bridges directly into Microsoft Teams, enabling high-quality inbound and outbound calling directly from Teams without paying premium enterprise calling plan markups.',
     bullets: [
-      'Personal dedicated telecommunications engineer and local support',
-      'White-glove network readiness assessment and hardware configuration',
-      'Scalable license models that adapt dynamically as your team expands',
-      'Transparent flat-rate pricing with zero hidden surcharges or surprise fees',
+      'Direct voice routing with zero extra softphones or clunky dialers needed',
+      'Retain existing business phone numbers with seamless number porting',
+      'Substantial cost savings compared to standard Microsoft Calling Plans',
+      'Single unified platform for internal team chat and external client calls',
+    ],
+    reverseLayout: true,
+  },
+  {
+    id: 'custom-solutions',
+    badge: 'Let Us Come To You',
+    title: 'Customized Telecom Solutions',
+    subtitle: 'Not all businesses are the same. We create customized solutions for your business today.',
+    description:
+      'Whether you are a solopreneur or a growing team of 100, Telestar has you covered. Give us a call, and Keith Miller and our team can discuss your specific communication needs in person.',
+    bullets: [
+      'Personalized telecom consultation and local on-site system design ("Let us come to you")',
+      'Tailored solutions designed for your exact number of extensions, lines, and offices',
+      'Dedicated local support from Keith Miller and the experienced Telestar team',
+      'Straightforward, transparent pricing with zero hidden surcharges or surprise fees',
     ],
     image: '/assets/customized-solutions.png',
     imageAlt: 'Telestar customized telecom deployment and system design',
-    reverseLayout: true,
+    reverseLayout: false,
   },
 ];
 ---
@@ -83,7 +98,7 @@ const features: Feature[] = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
-      <span class="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
+      <span class="inline-block px-3 py-1 rounded-full bg-brand-cyan-light text-brand-cyan-dark text-xs font-semibold uppercase tracking-wider mb-3">
         Solutions & Capabilities
       </span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -120,7 +135,7 @@ const features: Feature[] = [
                 {feature.title}
               </h3>
 
-              <p class="text-base font-semibold text-blue-600">
+              <p class="text-base font-semibold text-brand-cyan-dark">
                 {feature.subtitle}
               </p>
 
@@ -131,7 +146,7 @@ const features: Feature[] = [
               <ul class="space-y-3 pt-2 text-sm text-slate-700">
                 {feature.bullets.map((bullet) => (
                   <li class="flex items-start gap-3">
-                    <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <div class="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full bg-brand-cyan-light flex items-center justify-center text-brand-cyan-dark">
                       <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
                         <path
                           fill-rule="evenodd"
@@ -148,7 +163,7 @@ const features: Feature[] = [
               <div class="pt-4">
                 <a
                   href="/contact"
-                  class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 group"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-brand-cyan-dark hover:text-brand-cyan group"
                 >
                   Request a consultation for {feature.title}
                   <svg
@@ -170,7 +185,7 @@ const features: Feature[] = [
               }`}
             >
               {feature.image ? (
-                <div class="w-full max-w-lg rounded-2xl bg-gradient-to-tr from-slate-100 via-blue-50/50 to-white p-4 sm:p-6 border border-slate-200/80 shadow-md">
+                <div class="w-full max-w-lg rounded-2xl bg-gradient-to-tr from-slate-100 via-brand-cyan-light/40 to-white p-4 sm:p-6 border border-slate-200/80 shadow-md">
                   <img
                     src={feature.image}
                     alt={feature.imageAlt || feature.title}
@@ -179,7 +194,7 @@ const features: Feature[] = [
                   />
                 </div>
               ) : (
-                <div class="w-full max-w-lg rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-slate-900 p-8 text-white shadow-xl flex flex-col justify-between min-h-[320px]">
+                <div class="w-full max-w-lg rounded-2xl bg-gradient-to-br from-brand-cyan via-brand-cyan-dark to-brand-navy p-8 text-white shadow-xl flex flex-col justify-between min-h-[320px]">
                   <div class="space-y-4">
                     <div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
                       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,12 +202,12 @@ const features: Feature[] = [
                       </svg>
                     </div>
                     <h4 class="text-2xl font-bold">{feature.title}</h4>
-                    <p class="text-sm text-blue-100 leading-relaxed">
+                    <p class="text-sm text-slate-200 leading-relaxed">
                       Instant deployment. Whether you want sleek desktop deskphones, mobile apps for field technicians, or web browser softphones, Telestar is ready out of the box.
                     </p>
                   </div>
-                  <div class="pt-6 border-t border-white/10 flex items-center justify-between text-xs text-blue-200 font-medium">
-                    <span>99.999% SLA Carrier Uptime</span>
+                  <div class="pt-6 border-t border-white/10 flex items-center justify-between text-xs text-brand-cyan-light font-medium">
+                    <span>Enterprise Carrier Reliability</span>
                     <span>Zero Hardware Lock-In</span>
                   </div>
                 </div>

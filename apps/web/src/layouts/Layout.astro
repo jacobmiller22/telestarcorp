@@ -21,12 +21,12 @@ const {
     <link rel="icon" type="image/png" href="/assets/logo.png" />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased flex flex-col selection:bg-blue-600 selection:text-white">
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased flex flex-col selection:bg-brand-cyan selection:text-white">
     <!-- Navigation Header -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
-          <!-- Logo -->
+          <!-- Column 1: Logo -->
           <div class="flex-shrink-0 flex items-center">
             <a href="/" class="flex items-center gap-2 group">
               <img
@@ -37,22 +37,55 @@ const {
             </a>
           </div>
 
-          <!-- Desktop Navigation -->
-          <nav class="hidden md:flex items-center space-x-8">
-            <a href="/" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Home</a>
-            <a href="/#features" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Solutions</a>
-            <a href="/#testimonials" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Testimonials</a>
-            <a href="/contact" class="text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Contact</a>
-          </nav>
+          <!-- Column 2: Desktop Navigation & Action Cluster (Unified Right Alignment) -->
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
+            <!-- Navigation Links -->
+            <nav class="flex items-center space-x-6 lg:space-x-8">
+              <a href="/" class="text-sm font-semibold text-slate-700 hover:text-brand-cyan-dark transition-colors">Home</a>
+              <a href="/#features" class="text-sm font-semibold text-slate-700 hover:text-brand-cyan-dark transition-colors">Solutions</a>
+              <a href="/#testimonials" class="text-sm font-semibold text-slate-700 hover:text-brand-cyan-dark transition-colors">Testimonials</a>
+              <a
+                href="https://serverdata.net/elevateapps/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-semibold text-slate-700 hover:text-brand-cyan-dark transition-colors flex items-center gap-1"
+              >
+                Get Apps
+                <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+              <a href="/contact" class="text-sm font-semibold text-slate-700 hover:text-brand-cyan-dark transition-colors">Contact</a>
+            </nav>
 
-          <!-- Action Buttons -->
-          <div class="hidden md:flex items-center space-x-4">
-            <a
-              href="/contact"
-              class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition-all hover:shadow-md"
-            >
-              Get Started
-            </a>
+            <span class="hidden xl:inline-block h-5 w-px bg-slate-200" aria-hidden="true"></span>
+
+            <!-- Action & Contact Buttons -->
+            <div class="flex items-center space-x-3 lg:space-x-4">
+              <a
+                href="tel:+18049308400"
+                class="hidden xl:inline-flex items-center gap-1.5 text-sm font-bold text-slate-800 hover:text-brand-cyan-dark transition-colors"
+              >
+                <svg class="w-4 h-4 text-brand-cyan" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z" />
+                </svg>
+                (804) 930-8400
+              </a>
+              <a
+                href="https://serverdata.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hidden lg:inline-flex items-center justify-center px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-brand-cyan-dark border border-brand-cyan/30 hover:border-brand-cyan hover:bg-brand-cyan-light rounded-lg transition-all"
+              >
+                Customer Login
+              </a>
+              <a
+                href="/contact"
+                class="inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-brand-cyan hover:bg-brand-cyan-dark rounded-lg shadow-xs transition-all hover:shadow-sm"
+              >
+                Schedule Consultation
+              </a>
+            </div>
           </div>
 
           <!-- Mobile Menu Button -->
@@ -72,13 +105,35 @@ const {
 
         <!-- Mobile Menu Drawer -->
         <div id="mobile-menu" class="hidden md:hidden pb-6 pt-2 border-t border-slate-100 space-y-3">
-          <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Home</a>
-          <a href="/#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Solutions</a>
-          <a href="/#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Testimonials</a>
-          <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">Contact</a>
-          <div class="pt-2">
-            <a href="/contact" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm">
-              Get Started
+          <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-cyan-dark hover:bg-slate-50">Home</a>
+          <a href="/#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-cyan-dark hover:bg-slate-50">Solutions</a>
+          <a href="/#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-cyan-dark hover:bg-slate-50">Testimonials</a>
+          <a
+            href="https://serverdata.net/elevateapps/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block px-3 py-2 rounded-md text-base font-medium text-brand-cyan-dark hover:bg-slate-50"
+          >
+            Get Apps (Desktop & Mobile) ↗
+          </a>
+          <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-cyan-dark hover:bg-slate-50">Contact</a>
+          <div class="pt-2 space-y-2 px-3">
+            <a
+              href="tel:+18049308400"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-lg"
+            >
+              Call (804) 930-8400
+            </a>
+            <a
+              href="https://serverdata.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-bold text-brand-cyan-dark border border-brand-cyan/30 hover:bg-brand-cyan-light rounded-lg"
+            >
+              Customer PBX Login ↗
+            </a>
+            <a href="/contact" class="w-full inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-white bg-brand-cyan hover:bg-brand-cyan-dark rounded-lg shadow-sm">
+              Schedule Consultation
             </a>
           </div>
         </div>
@@ -92,15 +147,16 @@ const {
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <!-- Column 1: Brand Info -->
-          <div class="md:col-span-2 space-y-4">
+          <div class="sm:col-span-2 lg:col-span-2 space-y-4">
             <img src="/assets/logo-white.png" alt="Telestar Corporation" class="h-9 w-auto object-contain" />
             <p class="text-sm text-slate-400 max-w-md leading-relaxed">
               We help small and medium businesses communicate better everyday with our all-in-one communications platform. Work better. From wherever.
             </p>
-            <div class="pt-2 text-sm text-slate-400">
-              <span class="font-semibold text-white">Direct Support:</span> support@telestarcorp.com
+            <div class="pt-2 text-sm text-slate-400 space-y-1">
+              <div><span class="font-semibold text-white">Direct Phone:</span> <a href="tel:+18049308400" class="hover:text-brand-accent text-slate-300">(804) 930-8400</a></div>
+              <div><span class="font-semibold text-white">Direct Support:</span> <a href="mailto:support@telestarcorp.com" class="hover:text-brand-accent text-slate-300">support@telestarcorp.com</a></div>
             </div>
           </div>
 
@@ -111,6 +167,8 @@ const {
               <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
               <li><a href="/#features" class="hover:text-white transition-colors">Solutions</a></li>
               <li><a href="/#testimonials" class="hover:text-white transition-colors">Client Testimonials</a></li>
+              <li><a href="https://serverdata.net/elevateapps/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Get Apps ↗</a></li>
+              <li><a href="https://serverdata.net" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Customer Login ↗</a></li>
               <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
@@ -119,18 +177,43 @@ const {
           <div>
             <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">Solutions</h3>
             <ul class="space-y-2.5 text-sm text-slate-400">
-              <li>Hosted VoIP Business Phones</li>
-              <li>Omnichannel Contact Center</li>
-              <li>Microsoft Teams Integration</li>
-              <li>Video Conferencing & Chat</li>
-              <li>Mobile & Desktop Apps</li>
+              <li><a href="/#features" class="hover:text-white transition-colors">Hosted VoIP & Cloud PBX</a></li>
+              <li><a href="https://serverdata.net/elevateapps/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Elevate Apps (Desktop & Mobile) ↗</a></li>
+              <li><a href="/#features" class="hover:text-white transition-colors">SecuriSync File Backup</a></li>
+              <li><a href="/#features" class="hover:text-white transition-colors">Contact Center & IVR</a></li>
+              <li><a href="/#features" class="hover:text-white transition-colors">Microsoft Teams Voice</a></li>
+              <li><a href="https://serverdata.net" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">PBX Management Portal ↗</a></li>
             </ul>
+          </div>
+
+          <!-- Column 4: Legal & Compliance -->
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200 mb-4">Legal &amp; Compliance</h3>
+            <ul class="space-y-2.5 text-sm text-slate-400">
+              <li><a href="/e911" class="hover:text-amber-400 transition-colors font-medium flex items-center gap-1.5 text-amber-200/90">
+                <svg class="w-3.5 h-3.5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                Emergency 911 Policy
+              </a></li>
+              <li><a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
+            </ul>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-500 leading-normal">
+              Compliant with FCC 47 CFR &sect; 9.5, Kari's Law, and RAY BAUM'S Act.
+            </div>
           </div>
         </div>
 
-        <div class="pt-8 mt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <div class="pt-8 mt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>Copyright &copy; {new Date().getFullYear()} Telestar Corporation. All rights reserved.</p>
-          <p class="mt-2 sm:mt-0">Hosted on Cloudflare Edge Network.</p>
+          <div class="flex items-center gap-4">
+            <a href="/e911" class="hover:text-slate-400 transition-colors">E911 Disclosure</a>
+            <span>&bull;</span>
+            <a href="/privacy" class="hover:text-slate-400 transition-colors">Privacy</a>
+            <span>&bull;</span>
+            <a href="/terms" class="hover:text-slate-400 transition-colors">Terms</a>
+          </div>
         </div>
       </div>
     </footer>

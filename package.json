@@ -6,6 +6,7 @@
     "build": "turbo run build",
     "dev": "tsx scripts/dev.ts",
     "check": "turbo run check",
+    "check:tokens": "tsx scripts/verify-design-tokens.ts",
     "check:bundle": "tsx scripts/check-bundle-budget.ts",
     "test": "turbo run test",
     "test:unit": "turbo run test",

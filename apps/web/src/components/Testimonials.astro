@@ -15,8 +15,8 @@ const testimonials: Testimonial[] = [
     company: 'Spark Solutions',
     image: '/assets/testimonials/shannon-adee.jpeg',
     quote:
-      "I don't think I can say enough about the ease of use of the Telestar system. But even more than that, their customer service is top notch. It's like having an IT department down the hall.",
-    highlight: 'Top-Notch Customer Service',
+      "Telestar is our go-to for all things business phone, sms, and conferencing. We were unhappy with some of their competitors because service was unrelieable, and the admin panels were clunky. Telestar is constantly updating their systems, and customer service is top-notch. It's an added bonus too that the cost is less than what we were paying before - for more features. We highly recommend Telestar and the entire team!",
+    highlight: 'Top-Notch Customer Service & More Features',
   },
   {
     name: 'Ben Handzel',
@@ -24,8 +24,8 @@ const testimonials: Testimonial[] = [
     company: 'Restoration 1 – South Richmond',
     image: '/assets/testimonials/ben-handzel.png',
     quote:
-      'Telestar has been a game-changer for our emergency restoration business. Quick dispatch, crystal clear calls, and incredible support day or night. We never miss an urgent client call.',
-    highlight: 'Reliable 24/7 Dispatch',
+      'After switching from a competitor to Telestar, we actually started receiving more calls, booked more appointments, and have increased our revenue. Customer service is outstanding. I highly recommend you having a conversation with Telestar if you own a service based business.',
+    highlight: 'Increased Calls & Outstanding Service',
   },
   {
     name: 'Shannon Springer',
@@ -33,20 +33,20 @@ const testimonials: Testimonial[] = [
     company: 'The Springer Agency',
     image: '/assets/testimonials/shannon-springer.png',
     quote:
-      'Switching to Telestar slashed our telecom overhead while dramatically increasing reliability. The Microsoft Teams integration seamlessly fits our existing workflow across all our branch offices.',
-    highlight: 'Slashed Overhead & Teams Integration',
+      'If you are looking for a phone provider that gets things done, Keith Miller and Telestar are your must use! We have been using Telestar for several years now for our extremely busy insurance agency. With 3 locations in Virginia, having our phones on point is critical. Having switched from a “larger company” due to poor customer service and phone issues, Keith is committed to that not being a problem with for his clients. Huge thanks for Telestar for keeping us in communication with our clients.',
+    highlight: 'Keith Miller & Telestar Get Things Done',
   },
 ];
 ---
 
 <section id="testimonials" class="py-20 lg:py-28 bg-slate-50 border-t border-slate-200/60 relative overflow-hidden">
   <!-- Background Glow -->
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-cyan-light/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
+      <span class="inline-block px-3 py-1 rounded-full bg-brand-cyan-light text-brand-cyan-dark text-xs font-semibold uppercase tracking-wider mb-3">
         Client Stories
       </span>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -73,7 +73,7 @@ const testimonials: Testimonial[] = [
               </div>
 
               <!-- Tagline Highlight -->
-              <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-blue-50 text-blue-700">
+              <span class="inline-block text-xs font-semibold px-2.5 py-1 rounded bg-brand-cyan-light text-brand-cyan-dark">
                 {t.highlight}
               </span>
 
@@ -92,7 +92,7 @@ const testimonials: Testimonial[] = [
                 loading="lazy"
               />
               <div>
-                <h4 class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                <h4 class="text-sm font-bold text-slate-900 group-hover:text-brand-cyan-dark transition-colors">
                   {t.name}
                 </h4>
                 <p class="text-xs font-medium text-slate-500">
@@ -105,22 +105,22 @@ const testimonials: Testimonial[] = [
       }
     </div>
 
-    <!-- Trust Stats Banner -->
+    <!-- Grounded Proof Points Banner -->
     <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <div class="p-6 rounded-xl bg-white border border-slate-200/60 shadow-xs">
-        <p class="text-3xl font-extrabold text-blue-600">99.999%</p>
-        <p class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Uptime Reliability</p>
+        <p class="text-3xl font-extrabold text-brand-cyan-dark">2012</p>
+        <p class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Serving Regional Businesses</p>
       </div>
       <div class="p-6 rounded-xl bg-white border border-slate-200/60 shadow-xs">
-        <p class="text-3xl font-extrabold text-blue-600">&lt; 30s</p>
-        <p class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Average Support Response</p>
+        <p class="text-3xl font-extrabold text-brand-cyan-dark">Local</p>
+        <p class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Dedicated Personal Support</p>
       </div>
       <div class="p-6 rounded-xl bg-white border border-slate-200/60 shadow-xs">
-        <p class="text-3xl font-extrabold text-blue-600">100%</p>
-        <p class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Free White-Glove Setup</p>
+        <p class="text-3xl font-extrabold text-brand-cyan-dark">All-in-1</p>
+        <p class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Phone, Video & File Backup</p>
       </div>
       <div class="p-6 rounded-xl bg-white border border-slate-200/60 shadow-xs">
-        <p class="text-3xl font-extrabold text-blue-600">0</p>
+        <p class="text-3xl font-extrabold text-brand-cyan-dark">0</p>
         <p class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Hardware Lock-In</p>
       </div>
     </div>
