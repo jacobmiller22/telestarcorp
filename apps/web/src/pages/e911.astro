@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Emergency 911 / E911 Policy & FCC Disclosures | Telestar Corporation"
+  description="Mandatory Federal Communications Commission (FCC) Emergency 911 (E911) disclosures, interconnected VoIP service limitations, Kari's Law, and RAY BAUM'S Act compliance."
+>
+  <div class="bg-slate-50 py-12 sm:py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center text-xs font-medium text-slate-500 mb-6 space-x-2">
+        <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-slate-800">Emergency 911 Advisory</span>
+      </nav>
+
+      <!-- Document Header -->
+      <div class="border-b border-slate-200 pb-8 mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4">
+          Statutory FCC Compliance Advisory
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Emergency 911 Service (E911) Disclosure
+        </h1>
+        <p class="mt-3 text-base text-slate-600 leading-relaxed">
+          Important legal and operational advisory regarding 911 and Enhanced 911 (E911) dialing limitations on Telestar Corporation interconnected VoIP and cloud communication services.
+        </p>
+        <p class="mt-2 text-xs text-slate-400">
+          Last Updated: September 2026 &bull; Compliant with FCC 47 CFR &sect; 9.5, Kari's Law, and RAY BAUM'S Act
+        </p>
+      </div>
+
+      <!-- High Priority Notice Box -->
+      <div class="p-6 rounded-2xl bg-amber-50 border-2 border-amber-300/80 text-amber-950 mb-10 space-y-3">
+        <div class="flex items-center gap-2.5 font-bold text-base text-amber-900">
+          <svg class="w-6 h-6 text-amber-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+          </svg>
+          CRITICAL EMERGENCY DIALING NOTICE
+        </div>
+        <p class="text-sm leading-relaxed text-amber-900">
+          Please read this disclosure thoroughly before deploying or using Telestar interconnected VoIP, Elevate cloud PBX extensions, softphones, or mobile calling apps. Interconnected VoIP 911 service differs substantially from traditional analog or wireline telephone 911 service. By subscribing to or utilizing Telestar services, you acknowledge and agree to these limitations.
+        </p>
+      </div>
+
+      <!-- Main Body Content -->
+      <div class="prose prose-slate max-w-none space-y-8 text-sm sm:text-base leading-relaxed text-slate-700">
+        <section class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            1. Overview &amp; FCC Rule 47 CFR &sect; 9.5
+          </h2>
+          <p>
+            The Federal Communications Commission (FCC) requires that interconnected Voice over Internet Protocol (VoIP) providers inform all subscribers and prospective customers of the specific circumstances under which E911 emergency dialing may be limited or unavailable in comparison to traditional circuit-switched telephone service.
+          </p>
+          <p>
+            When an end user dials <strong>911</strong> from an interconnected VoIP device, the call and associated location information are routed through specialized third-party emergency routing gateways to the appropriate local Public Safety Answering Point (PSAP) serving the caller's registered physical location.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            2. Differences Between VoIP 911 and Traditional Wireline 911
+          </h2>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>
+              <strong>Physical Address Binding:</strong> Traditional landline telephones are hardwired directly to a physical wall jack tied to a permanent street address in the local telephone exchange. VoIP phone calls are transmitted over packet-switched data networks and are tied to a <em>Registered Service Address</em> rather than a dedicated physical cable.
+            </li>
+            <li>
+              <strong>Automatic Location Information (ALI):</strong> If your physical address is not accurately registered in the Telestar subscriber database, or if you dial from a mobile softphone or relocated IP phone without updating your registered address, emergency responders will receive outdated or incorrect location information.
+            </li>
+            <li>
+              <strong>Administrative Routing:</strong> In certain limited regions or emergency gateway failover scenarios, a 911 call may route to a national emergency relay center rather than directly to the local municipal PSAP, which can result in verbal verification of your location before dispatching assistance.
+            </li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            3. Power Outages &amp; Broadband Disruptions
+          </h2>
+          <p>
+            Telestar interconnected VoIP services require an active high-speed broadband internet connection and continuous electrical power for all on-premise networking equipment (cable/fiber modems, routers, network switches, and IP desk phones).
+          </p>
+          <div class="p-4 rounded-xl bg-slate-100 border-l-4 border-blue-600 text-slate-800 space-y-2 text-sm">
+            <p class="font-semibold text-slate-900">Important Safeguard Requirements:</p>
+            <p>
+              In the event of an electrical power failure, broadband ISP network outage, router malfunction, or local area network disruption, <strong>VoIP 911 dialing will not function</strong>. Telestar strongly advises all subscribers to maintain an Uninterruptible Power Supply (UPS / battery backup) for essential networking gear and to maintain alternative communications methods (such as charged mobile cellular devices).
+            </p>
+          </div>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            4. Mandatory Registration of Physical Service Address
+          </h2>
+          <p>
+            Subscribers must provide Telestar with the accurate, physical street address where each desk phone, IP extension, or softphone will be utilized. If an IP desk phone is moved to a new office, new building, or home telework location, or if a user connects via the Elevate desktop softphone or mobile client, the subscriber <strong>must immediately update the registered physical service address</strong> with Telestar support or via the subscriber PBX management portal.
+          </p>
+          <p class="text-xs text-slate-500 italic">
+            Failure to provide timely and accurate physical address updates may cause emergency responders to be dispatched to the wrong physical location, resulting in life-threatening delays.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            5. Kari's Law Compliance (Direct 911 Dialing)
+          </h2>
+          <p>
+            Under federal law (Kari's Law, 47 U.S.C. &sect; 623), all Multi-Line Telephone Systems (MLTS) and Cloud PBX platforms deployed or configured in the United States must enable users to dial <strong>911 directly without dialing an outside access code</strong> (such as "9" or "8") to reach an outside line.
+          </p>
+          <p>
+            Telestar systems are pre-configured to comply with Kari's Law. Any user picking up any Telestar-provisioned extension may dial 911 directly. Additionally, Telestar systems support designated internal emergency notifications (alerting front desk or administrative personnel when an on-premise 911 call is placed).
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            6. RAY BAUM'S Act Compliance (Dispatchable Location)
+          </h2>
+          <p>
+            Under Section 506 of RAY BAUM'S Act, emergency 911 calls placed from multi-line phone systems and interconnected VoIP services must convey a valid <strong>Dispatchable Location</strong> to the receiving Public Safety Answering Point.
+          </p>
+          <p>
+            A dispatchable location consists of the validated street address of the caller, plus additional specific location details necessary to locate the caller in a reasonable amount of time (e.g., suite number, building number, floor, or specific room identification). Subscribers operating in multi-floor or campus environments are responsible for maintaining accurate location identifiers for each extension.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            7. Warning Labels &amp; End-User Notification
+          </h2>
+          <p>
+            Subscribers are required to affix clear, prominent warning labels to all IP desk phones, analog telephone adapters, and terminal equipment informing users that 911 emergency dialing may be limited or unavailable during power or internet interruptions. Telestar can provide physical warning stickers upon request.
+          </p>
+        </section>
+
+        <section class="space-y-3 pt-6 border-t border-slate-200">
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+            8. Questions &amp; Address Verification
+          </h2>
+          <p>
+            To verify or update the registered 911 address for any extension, contact Telestar Corporation support directly:
+          </p>
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-2 text-sm">
+            <p><strong>Telestar Corporation Support &amp; E911 Desk</strong></p>
+            <p>Direct Telephone: <a href="tel:+18049308400" class="text-blue-600 font-semibold hover:underline">(804) 930-8400</a></p>
+            <p>Email: <a href="mailto:support@telestarcorp.com" class="text-blue-600 font-semibold hover:underline">support@telestarcorp.com</a></p>
+            <p>Subscriber Portal: <a href="https://serverdata.net" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-semibold hover:underline">https://serverdata.net ↗</a></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>
