@@ -3,221 +3,167 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Contact Us | Telestar Corporation"
-  description="Connect with our telecommunications specialists to request a customized quote, schedule a demo, or get direct technical support."
+  title="Contact & Consultation | Telestar Corporation"
+  description="Connect directly with Keith Miller and the Telestar team for customized cloud PBX, hosted voice, and business communications consultations."
 >
-  <div class="bg-gradient-to-b from-blue-50/60 to-white py-16 lg:py-24">
+  <div class="bg-slate-50 py-12 sm:py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Page Header -->
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
-          Get In Touch
+      <!-- Breadcrumb -->
+      <nav class="flex items-center text-xs font-medium text-slate-500 mb-6 space-x-2">
+        <a href="/" class="hover:text-blue-600 transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-slate-800">Contact &amp; Consultation</span>
+      </nav>
+
+      <!-- Section Header -->
+      <div class="max-w-3xl mb-12">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-3">
+          Let Us Come To You
         </span>
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Let’s discuss your telecom needs.
+          Talk directly with Keith Miller &amp; the Telestar team.
         </h1>
-        <p class="mt-4 text-base sm:text-lg text-slate-600">
-          Whether you’re exploring a new hosted phone system, optimizing your contact center, or integrating with Microsoft Teams, we’re here to help.
+        <p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+          Not all businesses are the same. Whether you need a simple phone system upgrade or a complete multi-office cloud PBX, we provide personalized, local consultation with zero automated runaround.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <!-- Contact Form Column -->
-        <div class="lg:col-span-7 bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm">
-          <h2 class="text-xl font-bold text-slate-900 mb-2">Request a Customized Consultation</h2>
-          <p class="text-sm text-slate-500 mb-6">
-            Fill out the form below and an engineer will get back to you within 1 business day.
-          </p>
-
-          <form id="contact-form" class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label for="first-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  First Name *
-                </label>
-                <input
-                  type="text"
-                  id="first-name"
-                  name="firstName"
-                  required
-                  placeholder="Jane"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
-                />
+      <!-- Main Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <!-- Left Column: Direct Inbound Channels (Option B) -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Channel 1: Direct Phone Call -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs hover:shadow-md transition-all space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z" />
+                </svg>
               </div>
-
               <div>
-                <label for="last-name" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  Last Name *
-                </label>
-                <input
-                  type="text"
-                  id="last-name"
-                  name="lastName"
-                  required
-                  placeholder="Doe"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
-                />
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Immediate Response</span>
+                <h2 class="text-xl font-bold text-slate-900">Direct Telephone Consultation</h2>
               </div>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label for="email" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  Business Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="jane@company.com"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
-                />
-              </div>
-
-              <div>
-                <label for="phone" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  Phone Number *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  placeholder="(555) 000-0000"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
-                />
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label for="company-size" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  Company Size
-                </label>
-                <select
-                  id="company-size"
-                  name="companySize"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
-                >
-                  <option value="1-5">1 – 5 users</option>
-                  <option value="6-20">6 – 20 users</option>
-                  <option value="21-50">21 – 50 users</option>
-                  <option value="50-100">50 – 100 users</option>
-                  <option value="100+">100+ enterprise</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="primary-interest" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                  Primary Interest
-                </label>
-                <select
-                  id="primary-interest"
-                  name="primaryInterest"
-                  class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
-                >
-                  <option value="unified-comms">Unified Communications / Hosted VoIP</option>
-                  <option value="contact-center">Contact Center Solutions</option>
-                  <option value="teams-integration">Microsoft Teams Integration</option>
-                  <option value="custom-solution">Custom Telecom Assessment</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="message" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
-                How can we help? (Optional)
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Tell us about your current phone setup, number of seats, or specific requirements..."
-                class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm bg-slate-50/50"
-              ></textarea>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                id="submit-btn"
-                class="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all cursor-pointer"
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Give us a call to speak directly with Keith Miller or one of our communications specialists. We answer our own phones—no frustrating interactive phone trees or overseas call centers.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a
+                href="tel:+18049308400"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-base rounded-xl shadow-sm hover:shadow-md transition-all"
               >
-                Submit Consultation Request
-              </button>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 4V3z" />
+                </svg>
+                Call (804) 930-8400
+              </a>
+              <span class="text-xs text-slate-500 font-medium">Monday &ndash; Friday, 8:00 AM &ndash; 6:00 PM EST</span>
             </div>
-          </form>
+          </div>
 
-          <!-- Success Alert (hidden by default) -->
-          <div
-            id="form-success-banner"
-            class="hidden mt-6 p-6 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2"
-          >
-            <div class="flex items-center gap-2 font-bold text-emerald-800">
-              <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-              </svg>
-              Thank you! Your request has been received.
+          <!-- Channel 2: Pre-Formatted Email Consultation Request -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-200/80 shadow-xs hover:shadow-md transition-all space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 flex-shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Zero-Loss Written Request</span>
+                <h2 class="text-xl font-bold text-slate-900">Email Consultation Request</h2>
+              </div>
             </div>
-            <p class="text-sm text-emerald-700">
-              A Telestar communications engineer has been notified and will reach out to you within one business day with customized pricing and options.
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Prefer writing to us? Click below to launch a pre-formatted consultation request directly in your email client. Every message goes straight to our technical engineering desk.
+            </p>
+            <div class="pt-2">
+              <a
+                href="mailto:support@telestarcorp.com?subject=Consultation%20Request%20-%20Telestar%20Corporation&body=Hello%20Keith%20%26%20Telestar%20Team%2C%0A%0AWe%20would%20like%20to%20schedule%20a%20consultation%20for%20our%20business%20phone%20system.%0A%0ACompany%20Name%3A%20%0ANumber%20of%20Phone%20Lines%20%2F%20Users%3A%20%0ABest%20Phone%20Number%20to%20Reach%20Us%3A%20%0ALocation%20(City%2C%20State)%3A%20%0A%0AThank%20you!"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl shadow-sm hover:shadow-md transition-all"
+              >
+                <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+                Launch Pre-Formatted Email
+              </a>
+              <p class="mt-2 text-xs text-slate-400">
+                Or email us manually at: <a href="mailto:support@telestarcorp.com" class="text-blue-600 underline">support@telestarcorp.com</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Channel 3: Local In-Person Consultation Promise -->
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-2xl p-8 border border-blue-200/80 shadow-xs space-y-3">
+            <div class="flex items-center gap-2 text-blue-900 font-bold text-base">
+              <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+              "Let Us Come To You!"
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              We take pride in building real, personal relationships. For businesses throughout Virginia and the region, Keith Miller and our team can visit your location in person, inspect your existing cabling, and help you select the exact hardware or softphone setup for your team.
             </p>
           </div>
         </div>
 
-        <!-- Sidebar / Contact Details Column -->
-        <div class="lg:col-span-5 space-y-8">
-          <!-- Direct Support Card -->
-          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-6">
-            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">Direct Support & Inquiries</h3>
-
-            <div class="space-y-4 text-sm">
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-slate-900">Email Support</h4>
-                  <p class="text-slate-500">Fast response from our technical desk.</p>
-                  <a href="mailto:support@telestarcorp.com" class="text-blue-600 font-medium hover:underline mt-0.5 inline-block">
-                    support@telestarcorp.com
-                  </a>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-slate-900">Support Hours</h4>
-                  <p class="text-slate-500">Monday – Friday: 8:00 AM – 6:00 PM EST</p>
-                  <p class="text-xs text-slate-400 mt-1">24/7 Emergency priority routing for critical enterprise lines.</p>
-                </div>
-              </div>
+        <!-- Right Column: Subscriber Utilities & Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Existing Customer Card -->
+          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-4">
+            <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">Existing Telestar Subscribers</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Looking to manage your cloud PBX extensions, listen to voicemail, or download client software?
+            </p>
+            <div class="space-y-3 pt-1">
+              <a
+                href="https://serverdata.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-between p-3.5 rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 text-slate-800 hover:text-blue-700 font-semibold text-sm transition-all"
+              >
+                <span>Customer PBX Management Portal</span>
+                <span class="text-xs text-blue-600">serverdata.net ↗</span>
+              </a>
+              <a
+                href="https://serverdata.net/elevateapps/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-between p-3.5 rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 text-slate-800 hover:text-blue-700 font-semibold text-sm transition-all"
+              >
+                <span>Download Desktop &amp; Mobile Apps</span>
+                <span class="text-xs text-blue-600">Elevate Apps ↗</span>
+              </a>
+              <a
+                href="/e911"
+                class="w-full inline-flex items-center justify-between p-3.5 rounded-xl border border-amber-200 hover:border-amber-400 bg-amber-50/40 text-amber-900 font-semibold text-sm transition-all"
+              >
+                <span>Emergency 911 (E911) Advisory</span>
+                <span class="text-xs text-amber-700">FCC Notice ↗</span>
+              </a>
             </div>
           </div>
 
-          <!-- Why Telestar Callout -->
-          <div class="bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-2xl p-8 shadow-md space-y-4">
-            <h3 class="text-lg font-bold text-white">The Telestar Difference</h3>
+          <!-- The Telestar Commitment -->
+          <div class="bg-slate-900 text-white rounded-2xl p-8 shadow-md space-y-4">
+            <h3 class="text-lg font-bold text-white">Why Businesses Choose Telestar</h3>
             <ul class="space-y-3 text-sm text-slate-300">
               <li class="flex items-center gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                <span>No overseas call centers — talk directly with knowledgeable US engineers</span>
+                <span>Personalized direct support from Keith Miller &amp; team</span>
               </li>
               <li class="flex items-center gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                <span>White-glove onboarding and free setup for all company sizes</span>
+                <span>No long-term hardware lock-in or equipment markups</span>
               </li>
               <li class="flex items-center gap-2.5">
                 <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                <span>Zero downtime number porting guaranteed</span>
+                <span>Seamless phone number porting from your previous carrier</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                <span>All-in-one phone, video meetings, and SecuriSync file backup</span>
               </li>
             </ul>
           </div>
@@ -225,29 +171,4 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </div>
-
-  <script>
-    const form = document.getElementById('contact-form') as HTMLFormElement | null;
-    const banner = document.getElementById('form-success-banner');
-    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
-
-    if (form && banner) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.innerText = 'Transmitting...';
-        }
-
-        setTimeout(() => {
-          form.reset();
-          form.classList.add('opacity-50', 'pointer-events-none');
-          banner.classList.remove('hidden');
-          if (submitBtn) {
-            submitBtn.innerText = 'Request Submitted';
-          }
-        }, 600);
-      });
-    }
-  </script>
 </Layout>
