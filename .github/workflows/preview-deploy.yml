@@ -36,6 +36,9 @@ jobs:
       - name: Typecheck & Lint
         run: pnpm run check
 
+      - name: Build Application
+        run: pnpm run build
+
       - name: Compute Preview Variables
         id: vars
         run: |
