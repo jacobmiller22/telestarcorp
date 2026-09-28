@@ -1,8 +1,6 @@
-# Cloudflare Workers DevOps & Multi-Worker Template
+# Telestar Corporation
 
-An enterprise-grade, edge-native monorepo template and boilerplate for applications built on **Cloudflare Workers**. 
-
-Engineered with a **composable feature architecture**, this template provides battle-tested CI/CD pipelines, ephemeral PR preview environments, staging-to-production promotion governance, and autonomous agent tooling without frontend framework bloat.
+Modern, edge-native web platform for **Telestar Corporation** (Hosted VoIP Solutions & Unified Communications), reconstructed from the Wayback Machine archive and built with **Astro 5 + Tailwind CSS v4** deployed on **Cloudflare Workers**.
 
 ---
 
@@ -10,15 +8,13 @@ Engineered with a **composable feature architecture**, this template provides ba
 
 ```
 apps/
-├── api/             # Primary Edge API Worker (Fetch handler, Health probe, D1, KV, R2)
-└── worker-bg/       # Auxiliary Worker (Queues consumer, Crons, Service Binding RPC)
+├── web/             # Astro 5 + Tailwind CSS v4 Modern Frontend
+├── api/             # Cloudflare Edge Worker (Static Assets bridge & /api/health probe)
+└── worker-bg/       # Auxiliary Background Worker
 
 packages/
-├── config/          # Typed Zod environment schema, Feature flags, Integration Matrix
+├── config/          # Typed Zod environment schema & Feature flags
 └── types/           # Shared TypeScript domain models & contracts
-
-infra/
-└── terraform/       # Modular IaC for Cloudflare D1, KV, R2, DNS, WAF, and Access
 ```
 
 ### 🛠️ Key Built-in DevOps Features

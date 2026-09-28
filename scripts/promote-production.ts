@@ -42,7 +42,7 @@ async function probeHealth(url: string): Promise<any> {
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const isDryRun = args.includes('--dry-run');
-  const stagingUrl = process.env.STAGING_URL || 'https://staging-api.example.com/api/health';
+  const stagingUrl = process.env.STAGING_URL || 'https://telestarcorp-staging.jacobmillerdev.workers.dev/api/health';
 
   console.log(`\n${colors.bold}${colors.cyan}================================================================${colors.reset}`);
   console.log(`${colors.bold}${colors.cyan}   🚀 Cloudflare Edge Production Promotion & Release CLI        ${colors.reset}`);

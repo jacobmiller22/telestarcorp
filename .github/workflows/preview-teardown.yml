@@ -28,7 +28,7 @@ jobs:
         with:
           apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
-          command: delete --name template-api-preview-pr-${{ github.event.pull_request.number }} --force
+          command: delete --name telestarcorp-preview-pr-${{ github.event.pull_request.number }} --force
 
       - name: Comment Teardown Status on PR
         if: always()

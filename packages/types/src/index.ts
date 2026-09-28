@@ -19,6 +19,7 @@ export interface HealthProbeResult {
     r2?: BindingStatus;
     queues?: BindingStatus;
     serviceBindings?: BindingStatus;
+    assets?: BindingStatus;
   };
 }
 

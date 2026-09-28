@@ -140,8 +140,12 @@ function main(): void {
 
   console.log(`${colors.bold}Services Starting:${colors.reset}`);
   console.log(`- ${colors.blue}Integration Matrix Profile${colors.reset}: ${colors.bold}${profileName}${colors.reset}`);
+  console.log(`- ${colors.green}Web Frontend (apps/web)${colors.reset}: http://localhost:4321`);
   console.log(`- ${colors.cyan}Primary Edge API (apps/api)${colors.reset}: http://localhost:8787`);
   console.log(`- ${colors.magenta}Background Worker (apps/worker-bg)${colors.reset}: http://localhost:8788\n`);
+
+  // Start Web Frontend
+  startProcess('web', 'pnpm', ['--filter', '@telestarcorp/web', 'dev'], colors.green);
 
   // Start Primary Edge API Worker
   startProcess('api', 'pnpm', ['--filter', '@template/api', 'dev'], colors.cyan);

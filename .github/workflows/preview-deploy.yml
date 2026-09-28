@@ -41,11 +41,10 @@ jobs:
         run: |
           PR_NUM=${{ github.event.pull_request.number }}
           echo "PR_NUM=${PR_NUM}" >> $GITHUB_ENV
-          echo "PREVIEW_URL=https://pr-${PR_NUM}-api.example.com" >> $GITHUB_ENV
+          echo "PREVIEW_URL=https://telestarcorp-preview-pr-${PR_NUM}.jacobmillerdev.workers.dev" >> $GITHUB_ENV
 
           # Configure dynamic worker name in wrangler.toml for isolated per-PR deployment
-          sed -i -e "s/name = \"template-api-preview\"/name = \"template-api-preview-pr-${PR_NUM}\"/g" wrangler.toml
-          sed -i -e "s/pr-\*-api/pr-${PR_NUM}-api/g" wrangler.toml
+          sed -i -e "s/name = \"telestarcorp-preview\"/name = \"telestarcorp-preview-pr-${PR_NUM}\"/g" wrangler.toml
 
       - name: Deploy Ephemeral Preview to Cloudflare Workers
         id: deploy

@@ -8,6 +8,7 @@ export interface Env {
   STORAGE_BUCKET?: R2Bucket;
   JOBS_QUEUE?: Queue;
   WORKER_BG?: Fetcher;
+  ASSETS?: Fetcher;
 
   // Environment variables
   NODE_ENV?: string;
