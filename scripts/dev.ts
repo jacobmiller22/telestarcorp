@@ -45,7 +45,7 @@ function runPreflight(): void {
   // 1. Generate types for apps/api
   try {
     log('[types:api]', 'Generating Cloudflare Worker types for apps/api...', colors.yellow);
-    execSync('pnpm --filter @template/api exec wrangler types', { cwd: rootDir, stdio: 'pipe' });
+    execSync('pnpm --filter @telestarcorp/api exec wrangler types', { cwd: rootDir, stdio: 'pipe' });
   } catch (err: any) {
     log('[types:api]', `Warning: types generation failed: ${err.message}`, colors.yellow);
   }
@@ -148,10 +148,10 @@ function main(): void {
   startProcess('web', 'pnpm', ['--filter', '@telestarcorp/web', 'dev'], colors.green);
 
   // Start Primary Edge API Worker
-  startProcess('api', 'pnpm', ['--filter', '@template/api', 'dev'], colors.cyan);
+  startProcess('api', 'pnpm', ['--filter', '@telestarcorp/api', 'dev'], colors.cyan);
 
   // Start Background Worker
-  startProcess('worker-bg', 'pnpm', ['--filter', '@template/worker-bg', 'dev'], colors.magenta);
+  startProcess('worker-bg', 'pnpm', ['--filter', '@telestarcorp/worker-bg', 'dev'], colors.magenta);
 
   process.on('SIGINT', cleanup);
   process.on('SIGTERM', cleanup);

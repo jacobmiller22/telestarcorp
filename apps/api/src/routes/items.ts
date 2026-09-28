@@ -1,5 +1,5 @@
 import type { Env } from '../types';
-import type { ApiItem } from '@template/types';
+import type { ApiItem } from '@telestarcorp/types';
 
 export async function handleItemsRoute(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url);

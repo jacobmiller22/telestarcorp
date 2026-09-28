@@ -1,5 +1,5 @@
 import type { D1Database, KVNamespace, R2Bucket, Queue, Fetcher } from '@cloudflare/workers-types';
-import type { EnvironmentTier } from '@template/types';
+import type { EnvironmentTier } from '@telestarcorp/types';
 
 export interface Env {
   // Bindings (Optional depending on enabled features)

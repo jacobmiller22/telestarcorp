@@ -63,7 +63,10 @@ jobs:
 
           if [ -n "${EXISTING_PR_NUM}" ]; then
             echo "Refreshing Release PR #${EXISTING_PR_NUM}..."
-            gh pr edit "${EXISTING_PR_NUM}" --repo "${REPO}" --title "${PR_TITLE}" --body-file /tmp/release/notes.md
+            gh pr edit "${EXISTING_PR_NUM}" --repo "${REPO}" --title "${PR_TITLE}" --body-file /tmp/release/notes.md || {
+              echo "::warning::Unable to refresh Release PR #${EXISTING_PR_NUM} via GITHUB_TOKEN. Verify workflow permissions."
+              exit 0
+            }
           else
             if [ "${COMMIT_COUNT}" -eq "0" ]; then
               echo "Zero commits between production and staging. Skipping Release PR creation."
@@ -71,5 +74,8 @@ jobs:
             fi
 
             echo "Opening new Release PR..."
-            gh pr create --repo "${REPO}" --base production --head staging --title "${PR_TITLE}" --body-file /tmp/release/notes.md --label "${LABELS}"
+            gh pr create --repo "${REPO}" --base production --head staging --title "${PR_TITLE}" --body-file /tmp/release/notes.md --label "${LABELS}" || {
+              echo "::warning::GitHub Actions is not permitted to create pull requests. To allow automated release PRs, enable 'Allow GitHub Actions to create and approve pull requests' in repository Settings > Actions > General > Workflow permissions."
+              exit 0
+            }
           fi

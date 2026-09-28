@@ -35,13 +35,10 @@ importers:
 
   apps/api:
     dependencies:
-      '@telestarcorp/web':
-        specifier: workspace:*
-        version: link:../web
-      '@template/config':
+      '@telestarcorp/config':
         specifier: workspace:*
         version: link:../../packages/config
-      '@template/types':
+      '@telestarcorp/types':
         specifier: workspace:*
         version: link:../../packages/types
     devDependencies:
@@ -76,10 +73,10 @@ importers:
 
   apps/worker-bg:
     dependencies:
-      '@template/config':
+      '@telestarcorp/config':
         specifier: workspace:*
         version: link:../../packages/config
-      '@template/types':
+      '@telestarcorp/types':
         specifier: workspace:*
         version: link:../../packages/types
     devDependencies:
@@ -95,7 +92,7 @@ importers:
 
   packages/config:
     dependencies:
-      '@template/types':
+      '@telestarcorp/types':
         specifier: workspace:*
         version: link:../types
       zod:

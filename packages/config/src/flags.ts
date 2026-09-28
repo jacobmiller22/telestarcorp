@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { EnvironmentTier } from '@template/types';
+import type { EnvironmentTier } from '@telestarcorp/types';
 
 export const flagSchema = z.object({
   FLAG_MAINTENANCE_MODE: z.boolean().default(false),

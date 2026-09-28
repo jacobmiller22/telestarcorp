@@ -37,7 +37,8 @@ jobs:
           script: |
             const prNumber = context.payload.pull_request.number;
             const merged = context.payload.pull_request.merged;
-            const body = `🧹 **Ephemeral PR Preview Decommissioned**\n\n- **PR Status**: ${merged ? 'Merged into `staging`' : 'Closed without merging'}\n- **Preview Environment**: Destroyed.\n\n*All isolated Cloudflare Worker preview resources have been purged.*`;
+            const baseBranch = context.payload.pull_request.base?.ref || 'staging';
+            const body = `🧹 **Ephemeral PR Preview Decommissioned**\n\n- **PR Status**: ${merged ? `Merged into \`${baseBranch}\`` : 'Closed without merging'}\n- **Preview Environment**: Destroyed.\n\n*All isolated Cloudflare Worker preview resources have been purged.*`;
 
             try {
               const { data: comments } = await github.rest.issues.listComments({

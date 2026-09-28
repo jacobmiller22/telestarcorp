@@ -1,5 +1,5 @@
 {
-  "name": "@template/config",
+  "name": "@telestarcorp/config",
   "version": "0.1.0",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -7,7 +7,7 @@
     "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@template/types": "workspace:*",
+    "@telestarcorp/types": "workspace:*",
     "zod": "^3.22.4"
   },
   "devDependencies": {
