@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-cyan: #008cb8;
+  --color-brand-cyan-dark: #006d91;
+  --color-brand-cyan-light: #e6f4f8;
+  --color-brand-charcoal: #505050;
+  --color-brand-navy: #0f1c2e;
+  --color-brand-accent: #00a4d6;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
