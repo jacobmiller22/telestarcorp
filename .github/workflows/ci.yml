@@ -61,6 +61,9 @@ jobs:
       - name: Check Worker Bundle Budget
         run: pnpm run check:bundle
 
+      - name: Build Application
+        run: pnpm run build
+
       - name: Validate Worker Deployment (Dry-Run)
         if: github.event_name == 'pull_request'
         run: pnpm exec wrangler deploy --dry-run --env preview

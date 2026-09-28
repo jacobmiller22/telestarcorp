@@ -1,5 +1,5 @@
 import type { Env } from '../types';
-import type { HealthProbeResult, BindingStatus } from '@template/types';
+import type { HealthProbeResult, BindingStatus } from '@telestarcorp/types';
 
 const START_TIME = Date.now();
 

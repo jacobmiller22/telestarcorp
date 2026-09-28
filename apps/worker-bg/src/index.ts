@@ -1,5 +1,5 @@
 import type { BgEnv } from './types';
-import type { BackgroundJobPayload } from '@template/types';
+import type { BackgroundJobPayload } from '@telestarcorp/types';
 
 export default {
   // 1. Service Binding Entrypoint (called directly from apps/api)

@@ -1,4 +1,4 @@
-import type { EnvironmentTier } from '@template/types';
+import type { EnvironmentTier } from '@telestarcorp/types';
 
 export type D1Target = 'local-sqlite' | 'miniflare' | 'staging-remote' | 'production-remote';
 export type KvTarget = 'in-memory' | 'miniflare-disk' | 'staging-remote' | 'production-remote';

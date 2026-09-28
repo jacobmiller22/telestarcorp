@@ -35,15 +35,15 @@ importers:
 
   apps/api:
     dependencies:
+      '@telestarcorp/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      '@telestarcorp/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@telestarcorp/web':
         specifier: workspace:*
         version: link:../web
-      '@template/config':
-        specifier: workspace:*
-        version: link:../../packages/config
-      '@template/types':
-        specifier: workspace:*
-        version: link:../../packages/types
     devDependencies:
       '@cloudflare/workers-types':
         specifier: ^4.20240923.0
@@ -76,10 +76,10 @@ importers:
 
   apps/worker-bg:
     dependencies:
-      '@template/config':
+      '@telestarcorp/config':
         specifier: workspace:*
         version: link:../../packages/config
-      '@template/types':
+      '@telestarcorp/types':
         specifier: workspace:*
         version: link:../../packages/types
     devDependencies:
@@ -95,7 +95,7 @@ importers:
 
   packages/config:
     dependencies:
-      '@template/types':
+      '@telestarcorp/types':
         specifier: workspace:*
         version: link:../types
       zod:

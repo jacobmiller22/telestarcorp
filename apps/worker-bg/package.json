@@ -1,5 +1,5 @@
 {
-  "name": "@template/worker-bg",
+  "name": "@telestarcorp/worker-bg",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,8 +10,8 @@
     "types": "wrangler types"
   },
   "dependencies": {
-    "@template/config": "workspace:*",
-    "@template/types": "workspace:*"
+    "@telestarcorp/config": "workspace:*",
+    "@telestarcorp/types": "workspace:*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240923.0",
